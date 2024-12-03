@@ -1,0 +1,154 @@
+.career {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s;
+}
+
+.career-content {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    padding: 20px;
+}
+
+.career-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: auto;
+    padding: 40px;
+    text-align: justify;
+}
+
+.career-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, lightgreen, skyblue) 1;
+    width: fit-content;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form button:focus {
+    outline: 2px solid lightblue;
+}
+
+.form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.form button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+    background-color: lightskyblue;
+    color: black;
+    transform: scale(1.05)
+}
+
+.map {
+    width: 50%;
+    height: auto;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .career-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .career-container,
+    .map {
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+@media (max-width: 600px) {
+    .career-container {
+        padding: 20px;
+    }
+
+    .career-container h1 {
+        font-size: 1.5em;
+    }
+
+    .form input,
+    .form textarea,
+    .form button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-container h1 {
+        font-size: 1.2em;
+    }
+
+    .form input,
+    .form textarea,
+    .form button {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .map {
+        width: 100%;
+        height: 40vh;
+        border: 1px solid black;
+        margin: auto;
+    }
+}
