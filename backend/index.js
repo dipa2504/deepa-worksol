@@ -4,12 +4,14 @@ app.use(express.json())
 const cors = require('cors')
 const nodemailer = require('nodemailer')
 const { Contact } = require('./models/contact')
+require('dotenv').config();
 
 app.use(cors())
 require('./mongoose')
 
 app.listen(3000, () => {
-    console.log('Server started on 3000')
+    // console.log('Server started on 3000')
+    console.log(`Server started on ${process.env.PORT}`);
 })
 
 app.get('/', (req, res) => {
@@ -20,8 +22,10 @@ app.get('/', (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'deepa.worksol@gmail.com', // Replace with your email
-        pass: 'qvze ajia fpmq hzya'   // Replace with your email password
+        // user: 'deepa.worksol@gmail.com', 
+        // pass: 'qvze ajia fpmq hzya'   
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 })
 
@@ -56,7 +60,8 @@ app.post('/api/career', async (req, res) => {
             // Send email to yourself
             const adminMailOptions = {
                 from: email,
-                to: 'deepa.worksol@gmail.com', // Replace with your email
+                // to: 'deepa.worksol@gmail.com',
+                to: process.env.EMAIL_USER,
                 subject: 'Job Application - Worksol',
                 text: `New message from ${name} (${email}, ${mobile}):\n\n${message}`
             };

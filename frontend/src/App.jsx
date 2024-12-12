@@ -6,6 +6,8 @@ import Home from './components/Home/Home'
 
 function App() {
 
+  const url = 'http://localhost:3000';
+
   return (
     <>
       <BrowserRouter>

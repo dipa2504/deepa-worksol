@@ -18,6 +18,8 @@ import Pharmaceutical from './Pharmaceutical.webp'
 import Construction from './Construction.webp'
 import EmergingTech from './EmergingTech.webp'
 
+export const url='http://localhost:3000'
+
 
 export const assets = {
     logo,

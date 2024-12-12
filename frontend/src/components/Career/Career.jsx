@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Career.css';
 import axios from 'axios';
+import { url } from '../../assets/assets';
 
 const Career = () => {
     const [result, setResult] = useState("");
@@ -17,7 +18,8 @@ const Career = () => {
         setResult("Sending...");
 
         try {
-            const response = await axios.post("http://localhost:3000/api/career", user);
+            // const response = await axios.post("http://localhost:3000/api/career", user);
+            const response = await axios.post(`${url}/api/career`, user)
             const data = response.data;
 
             if (data.success) {
@@ -29,6 +31,7 @@ const Career = () => {
         } catch (error) {
             setResult("An error occurred. Please try again later.");
         }
+        console.log("Form Sumbitted", user);
     };
 
     const ValueHandler = (e) => {
